@@ -1,0 +1,132 @@
+﻿@model WebProgramming.Models.Book
+
+@{
+    ViewData["Title"] = "Thêm sách";
+}
+
+<div class="page-container">
+
+    <div class="form-card">
+
+        <h1>Bài 3 - Validation</h1>
+
+        <p class="description">
+            Thêm sách và kiểm tra dữ liệu nhập vào
+        </p>
+
+
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert success">
+                @ViewBag.Message
+            </div>
+        }
+
+
+        <form method="post"
+              action="/Book/Create">
+
+
+            <!-- TÊN SÁCH -->
+
+            <div class="form-group">
+
+                <label for="Name">
+                    Tên sách
+                </label>
+
+                <input type="text"
+                       id="Name"
+                       name="Name"
+                       value="@Model?.Name"
+                       placeholder="Nhập tên sách" />
+
+                <span class="validation-error">
+
+                    @Html.ValidationMessageFor(
+                        model => model.Name
+                    )
+
+                </span>
+
+            </div>
+
+
+            <!-- GIÁ -->
+
+            <div class="form-group">
+
+                <label for="Price">
+                    Giá
+                </label>
+
+                <input type="number"
+                       id="Price"
+                       name="Price"
+                       value="@(Model?.Price ?? 0)"
+                       step="0.01"
+                       placeholder="Nhập giá sách" />
+
+                <span class="validation-error">
+
+                    @Html.ValidationMessageFor(
+                        model => model.Price
+                    )
+
+                </span>
+
+            </div>
+
+
+            <button type="submit"
+                    class="btn-primary">
+
+                Thêm sách
+
+            </button>
+
+
+            <a href="/Book/Index"
+               class="btn-secondary">
+
+                Danh sách sách
+
+            </a>
+
+        </form>
+
+
+        <div class="validation-info">
+
+            <strong>Quy tắc kiểm tra:</strong>
+
+            <ul>
+
+                <li>
+                    Tên sách không được để trống.
+                </li>
+
+                <li>
+                    Giá phải lớn hơn 0.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="navigation-buttons">
+
+            <a href="/" class="btn-secondary">
+                ← Trang chủ
+            </a>
+
+            <a href="/Account/Login" class="btn-secondary">
+                Bài 1 - Login
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        @ViewData["Title"] - WebProgramming
+    </title>
+
+    <link rel="stylesheet"
+          href="~/css/site.css" />
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="container">
+
+            <div class="logo">
+                WebProgramming
+            </div>
+
+
+            <nav class="navigation">
+
+                <a href="/">
+                    🏠 Home
+                </a>
+
+                <a href="/Account/Login">
+                    🔐 Bài 1 - Login
+                </a>
+
+                <a href="/Book/Index">
+                    📚 Bài 2 - Books
+                </a>
+
+                <a href="/Book/Create">
+                    ✅ Bài 3 - Validation
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- NỘI DUNG TRANG -->
+
+    <main>
+
+        @RenderBody()
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 WebProgramming
+            </p>
+
+            <p>
+                ASP.NET Core MVC - Web Programming
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    @await RenderSectionAsync(
+        "Scripts",
+        required: false
+    )
+
+</body>
+
+</html>

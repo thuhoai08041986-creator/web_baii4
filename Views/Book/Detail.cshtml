@@ -1,0 +1,63 @@
+﻿@model WebProgramming.Models.Book
+
+@{
+    ViewData["Title"] = "Chi tiết sách";
+}
+
+<div class="page-container">
+
+    <div class="detail-card">
+
+        <h1>Chi tiết sách</h1>
+
+        <div class="detail-item">
+
+            <span>ID</span>
+
+            <strong>
+                @Model.Id
+            </strong>
+
+        </div>
+
+        <div class="detail-item">
+
+            <span>Tên sách</span>
+
+            <strong>
+                @Model.Name
+            </strong>
+
+        </div>
+
+        <div class="detail-item">
+
+            <span>Giá</span>
+
+            <strong>
+                @Model.Price
+            </strong>
+
+        </div>
+
+        <div class="detail-actions">
+
+            <a href="/Book/Index"
+               class="btn-secondary">
+
+                ← Danh sách sách
+
+            </a>
+
+            <a href="/Book/Create"
+               class="btn-primary">
+
+                + Thêm sách
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

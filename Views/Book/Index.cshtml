@@ -1,0 +1,100 @@
+﻿@model List<WebProgramming.Models.Book>
+
+@{
+    ViewData["Title"] = "Danh sách sách";
+}
+
+<div class="page-container">
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>Bài 2 - Book Management</h1>
+
+            <p class="description">
+                Danh sách sách trong hệ thống
+            </p>
+
+        </div>
+
+        <a href="/Book/Create" class="btn-primary">
+            + Thêm sách
+        </a>
+
+    </div>
+
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Tên sách</th>
+                    <th>Giá</th>
+                    <th>Thao tác</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var book in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @book.Id
+                        </td>
+
+                        <td>
+                            <strong>
+                                @book.Name
+                            </strong>
+                        </td>
+
+                        <td>
+                            @book.Price
+                        </td>
+
+                        <td>
+
+                            <a href="/Book/Detail/@book.Id"
+                               class="btn-detail">
+
+                                Xem chi tiết
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <div class="navigation-buttons">
+
+        <a href="/" class="btn-secondary">
+            ← Về trang chủ
+        </a>
+
+        <a href="/Account/Login" class="btn-secondary">
+            ← Bài 1 - Login
+        </a>
+
+        <a href="/Book/Create" class="btn-primary">
+            Bài 3 - Validation →
+        </a>
+
+    </div>
+
+</div>

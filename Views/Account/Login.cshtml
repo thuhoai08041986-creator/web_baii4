@@ -1,0 +1,87 @@
+﻿@model WebProgramming.Models.LoginModel
+
+@{
+    ViewData["Title"] = "Đăng nhập";
+}
+
+<div class="page-container">
+
+    <div class="form-card">
+
+        <h1>Bài 1 - Đăng nhập</h1>
+
+        <p class="description">
+            Form Submit cơ bản với ASP.NET Core MVC
+        </p>
+
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert @ViewBag.MessageType">
+                @ViewBag.Message
+            </div>
+        }
+
+        <form method="post" action="/Account/Login">
+
+            <div class="form-group">
+
+                <label for="Username">
+                    Username
+                </label>
+
+                <input type="text"
+                       id="Username"
+                       name="Username"
+                       value="@Model?.Username"
+                       placeholder="Nhập username" />
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="Password">
+                    Password
+                </label>
+
+                <input type="password"
+                       id="Password"
+                       name="Password"
+                       placeholder="Nhập password" />
+
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Đăng nhập
+            </button>
+
+        </form>
+
+        <div class="hint">
+
+            <strong>Tài khoản test:</strong>
+
+            <br />
+
+            Username: admin
+
+            <br />
+
+            Password: 123
+
+        </div>
+
+        <div class="navigation-buttons">
+
+            <a href="/" class="btn-secondary">
+                ← Về trang chủ
+            </a>
+
+            <a href="/Book/Index" class="btn-secondary">
+                Sang Bài 2 →
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
